@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Santainês Empreendimentos</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f4f4f4;
+text-align:center;
+}
+
+.topo{
+padding:25px;
+background:#1f3b2f;
+}
+
+.topo img{
+height:70px;
+}
+
+.menu{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:40px;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 8px 18px rgba(0,0,0,0.2);
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:220px;
+}
+
+.mapa{
+display:none;
+padding:20px;
+}
+
+.voltar{
+margin-bottom:15px;
+padding:10px 20px;
+background:#1f3b2f;
+color:white;
+border:none;
+cursor:pointer;
+border-radius:6px;
+font-size:16px;
+}
+
+.map-container{
+overflow:auto;
+border:1px solid #ccc;
+background:white;
+padding:10px;
+}
+
+.map-container img{
+width:100%;
+max-width:1200px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="topo">
+<img src="Logo Santa Inês.jpeg">
+</div>
+
+<div class="menu" id="menu">
+
+<div class="card" onclick="abrirMapa('villaggio')">
+<img src="Logo Villaggio Santa Inês.jpg">
+</div>
+
+<div class="card" onclick="abrirMapa('reserva')">
+<img src="Logo Reserva Santa Inês.jpg">
+</div>
+
+<div class="card" onclick="abrirMapa('quartier')">
+<img src="Logo Quartier Santa Inês.jpg">
+</div>
+
+</div>
+
+<div class="mapa" id="villaggio">
+<button class="voltar" onclick="voltar()">Voltar</button>
+<div class="map-container">
+<img src="villaggio.jpeg">
+</div>
+</div>
+
+<div class="mapa" id="reserva">
+<button class="voltar" onclick="voltar()">Voltar</button>
+<div class="map-container">
+<img src="reserva.jpeg">
+</div>
+</div>
+
+<div class="mapa" id="quartier">
+<button class="voltar" onclick="voltar()">Voltar</button>
+<div class="map-container">
+<img src="quartier.jpeg">
+</div>
+</div>
+
+<script>
+function abrirMapa(nome){
+document.getElementById("menu").style.display="none";
+document.getElementById(nome).style.display="block";
+}
+
+function voltar(){
+document.getElementById("menu").style.display="flex";
+document.getElementById("villaggio").style.display="none";
+document.getElementById("reserva").style.display="none";
+document.getElementById("quartier").style.display="none";
+}
+</script>
+
+</body>
+</html>
